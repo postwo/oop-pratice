@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Calculator;
 
 import java.util.Arrays;
 
@@ -39,7 +39,9 @@ public enum ArithmeticOperator {
 
     // 추상메서드
     public abstract  int Arithmeticcalculate(final int operand1, final int operand2); //shift+f6으로 메서드이름을 변경이 가능하다
-    
+
+
+    //여기서 작업을 처리해서 Calculator에게 다시 전달해준다
     public static int calculate(int operand1, String operateor, int operand2) {
         ArithmeticOperator selectedArithmeticOperator = Arrays.stream(ArithmeticOperator.values())// values는  모든 enum값을 가지고 온다
                 .filter(v ->v.operator.equals(operateor))// eunm값에 operater(+,/,* 등)같은지
